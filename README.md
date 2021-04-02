@@ -39,7 +39,7 @@ This service requires no authentication to use.
 
 To Demo this API, follow the installation instructions listed below. Once you have navigated to http://localhost:3000/ you can demo API calls using the Swagger UI. \
 If there are any parameters that need to be passed into an endpoint, there will be a form outlining what is required to be entered. Once you've entered the required info, click the "Try it out!" button to see the API response from your call!
-<img src="./public/images/swagger-sample.png" alt="Swagger Sample Call" width = 800 >
+<div><img src="./public/images/swagger-sample.png" alt="Swagger Sample Call" width = 800 ></div>
 
 From there, you can live demo the following endpoints:
 
