@@ -24,7 +24,9 @@ class StatesController < ApplicationController
 
   def destroy
     @state = State.find(params[:id])
-    @state.destroy
+    if @state.destroy!
+      render status: 200, json: { message: "This state has been deleted successfully." }
+    end
   end
 
   private
