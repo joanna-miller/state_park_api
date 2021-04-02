@@ -5,10 +5,10 @@
 #### _This project was created solely for the education of the author(s) and is not in a complete or portfolio-ready state. It should not be considered representative of professional work._
 
 
-[Epicodus](https://www.epicodus.com/) - [Ruby and Rails](https://www.learnhowtoprogram.com/ruby-and-rails/) <!-- - [Week 4](https://www.learnhowtoprogram.com/ruby-and-rails/ruby-database-basics/database-basics-independent-project) -->
+[Epicodus](https://www.epicodus.com/) - [Ruby and Rails](https://www.learnhowtoprogram.com/ruby-and-rails/) - [Week 6](https://www.learnhowtoprogram.com/ruby-and-rails/building-an-api/building-an-api-independent-project)
 
 
-#### Date created: {03/00/2021}
+#### Date created: 04/02/2021
 ---
 
 ## Technologies Used
@@ -18,27 +18,25 @@
 * _Embedded Ruby (ERB)_
 * _pg 1.2.3_
 * _Webpacker 5.2.1_
-* _jQuery Rails 4.4.0_
 * _Rspec Rails 5.0.0_
-* _Pry 0.14.0_
 * _Byebug 11.1.3_
 * _PostgreSQL 13.2_
 * _Bundler 2.2.11_
 * _Puma 5.2.2_
-* _Launchy 2.5.0_
 * _Faker 2.17.00_
-* _Bootstrap-Sass 3.4.1_
 * _git 2.30.0_
+* _FactoryBot_
+* _Should Matchers_
 
 ---
 
 ## Description
 
-{Description of application}
+A State and National Park API. A user cal make API calls to get a list of State and National Parks by state, or update, post, and delete states or parks. 
 
 ## Database Schema 
 The database for this application has the following tables and relationships:
-<div><img src="public/img/{image_name}.png" alt="Application Schema Visualization" width = 350 ></div>
+<div><img src="./public/images/api-schema.png" alt="Application Schema Visualization" width = 350 ></div>
 
 ---
 
@@ -47,19 +45,21 @@ The database for this application has the following tables and relationships:
 * You will need to use your system's **terminal emulator** to setup and locally use this application.
 * You must have **Ruby 2.6.5** installed to be able to launch this application ([how to install Ruby 2.6.5](https://www.learnhowtoprogram.com/ruby-and-rails/getting-started-with-ruby/installing-ruby)).
 * **PostgreSQL** is required to manage this application's database. You can [follow this link](https://www.enterprisedb.com/downloads/postgresql) to install it.
+* **Yarn** is required to utilize the live server with Rails 6.1.3, you can find yarn installation instructions [here](https://classic.yarnpkg.com/en/docs/install/#mac-stable).
 
 ---
 
 ## Setup/Installation
 
-* To clone this directory, navigate in your terminal to the desired location of the project and run command `git clone https://github.com/joanna-miller/state_park_api.git`
-* Navigate to top level of the directory with command `cd state_park_api`
-* To install bundler for managing gems run command `gem install bundler`
-* To install gems into the project run command `bundle install`
-* Launch PostgreSQL to run a persistent database management server with command `postgres`
-* To recreate database, run command `rake db:setup`
-* To run tests using rspec, run command `rspec`
-* To run a live server, from the root level of the project directory in your terminal, run command `rails server`
+* To clone this directory, navigate in your terminal to the desired location of the project and run command `$ git clone https://github.com/joanna-miller/state_park_api.git`
+* Navigate to top level of the directory with command `$ cd state_park_api`
+* To install bundler for managing gems run command `$ gem install bundler`
+* To install gems into the project run command `$ bundle install`
+* To install dependencies with webpacker, run command `$ rails webpacker:install`
+* Launch PostgreSQL to run a persistent database management server with command `$ postgres`
+* To recreate database, run command `$ rake db:setup`
+* To run tests using rspec, run command `$ rspec`
+* To run a live server, from the root level of the project directory in your terminal, run command `$ rails server`
 * To interact with application, navigate to http://localhost:3000/ in a web browser.
 * Exit live server, press Ctrl+C in your terminal
 
@@ -75,7 +75,7 @@ The database for this application has the following tables and relationships:
 
 ## Known Bugs
 
-* {list any known bugs here}
+* Please report any bugs to developer, contact info below. 
 
 ---
 
