@@ -2,9 +2,6 @@
 
 ### By _**Jo Miller**_
 
-#### _This project was created solely for the education of the author(s) and is not in a complete or portfolio-ready state. It should not be considered representative of professional work._
-
-
 [Epicodus](https://www.epicodus.com/) - [Ruby and Rails](https://www.learnhowtoprogram.com/ruby-and-rails/) - [Week 6](https://www.learnhowtoprogram.com/ruby-and-rails/building-an-api/building-an-api-independent-project)
 
 #### Date created: 04/02/2021
@@ -12,7 +9,7 @@
 
 ## Description
 
-A State and National Park API. A user cal make API calls to get a list of State and National Parks by state, or update, post, and delete states or parks. 
+A State and National Park API. A user can make API calls to get a list of State and National Parks by state, or update, post, and delete states or parks. There is also an endpoint that returns a randomized park.
 
 ---
 
@@ -20,18 +17,17 @@ A State and National Park API. A user cal make API calls to get a list of State 
 
 * _Ruby 2.6.5_
 * _Rails 6.1.3_
-* _Embedded Ruby (ERB)_
-* _pg 1.2.3_
-* _Webpacker 5.2.1_
-* _Rspec Rails 5.0.0_
-* _Byebug 11.1.3_
 * _PostgreSQL 13.2_
 * _Bundler 2.2.11_
-* _Puma 5.2.2_
-* _Faker 2.17.00_
 * _git 2.30.0_
-* _FactoryBot_
-* _Should Matchers_
+* _[Webpacker](https://github.com/rails/webpacker) 5.2.1_
+* _[pg](https://github.com/ged/ruby-pg) 1.2.3_
+* _[Rspec Rails](https://github.com/rspec/rspec-rails) 5.0.0_
+* _[Byebug](https://github.com/deivid-rodriguez/byebug) 11.1.3_
+* _[Puma](https://github.com/puma/puma) 5.2.2_
+* _[Faker](https://github.com/faker-ruby/faker) 2.17.00_
+* _[FactoryBot](https://github.com/thoughtbot/factory_bot) 6.1.0_
+* _[Should Matchers](https://github.com/thoughtbot/shoulda-matchers) 4.5.1_
 
 ---
 
@@ -41,8 +37,11 @@ This service requires no authentication to use.
 
 ## Demo API
 
-To Demo this API, follow the installation instructions listed below and navigate to http://localhost:3000/index.html in your browser. \
-There you can live demo the following API calls:
+To Demo this API, follow the installation instructions listed below. Once you have navigated to http://localhost:3000/ you can demo API calls using the Swagger UI. \
+If there are any parameters that need to be passed into an endpoint, there will be a form outlining what is required to be entered. Once you've entered the required info, click the "Try it out!" button to see the API response from your call!
+<img src="./public/images/swagger-sample.png" alt="Swagger Sample Call" width = 800 >
+
+From there, you can live demo the following endpoints:
 
 Action | Route | Description
 | :--- | --- | ---: |
@@ -61,10 +60,10 @@ Action | Route | Description
 ## Responses & Errors
 
 * `GET /states` - sample response
-    * <img src="./public/images/get_states.png" alt="Application Schema Visualization" width = 400 >
+    * <img src="./public/images/get_states.png" alt="get /states response sample" width = 400 >
 
 * `GET /states/113/parks` - sample response
-    * <img src="./public/images/get_parks.png" alt="Application Schema Visualization" width = 400 >
+    * <img src="./public/images/get_parks.png" alt="get /states/113/parks response sample" width = 400 >
 
 * 200 - OK
   * **{ "message": "This state has been updated successfully." }**
@@ -99,12 +98,13 @@ The database for this application has the following tables and relationships:
 * Navigate to top level of the directory with command `$ cd state_park_api`
 * To install bundler for managing gems run command `$ gem install bundler`
 * To install gems into the project run command `$ bundle install`
-* To install dependencies with webpacker, run command `$ rails webpacker:install`
+* To install dependencies with webpacker, run command `$ bundle exec rails webpacker:install`
 * Launch PostgreSQL to run a persistent database management server with command `$ postgres`
 * To recreate database, run command `$ rake db:setup`
 * To run tests using rspec, run command `$ rspec`
-* To run a live server, from the root level of the project directory in your terminal, run command `$ rails server`
-* To interact with application, navigate to http://localhost:3000/ in a web browser.
+* To generate Swagger Documentation, run command `$ rake swagger:docs`
+* To run a live server, run command `$ rails server`
+* To live demo API calls, navigate to http://localhost:3000/ in a web browser.
 * Exit live server, press Ctrl+C in your terminal
 
 --- 
@@ -119,7 +119,7 @@ The database for this application has the following tables and relationships:
 
 ## Known Bugs
 
-* Please report any bugs to developer, contact info below. 
+* Parks and park info currently seeded with Faker gem.
 
 ---
 
