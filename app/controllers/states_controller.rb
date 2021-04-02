@@ -28,7 +28,7 @@ class StatesController < ApplicationController
   end
 
   private
-  def quote_params
-    params.permit(:author, :content)
+  def state_params
+    params.permit(:name)
   end
 end
