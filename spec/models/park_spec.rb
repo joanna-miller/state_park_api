@@ -1,5 +1,5 @@
 require 'rails_helper'
 
 describe Park do
-  # Tests will go here.
+  it { should belong_to(:state) }
 end
