@@ -66,12 +66,17 @@ Action | Route | Description
 * `GET /states/113/parks` - sample response
     * <img src="./public/images/get_parks.png" alt="Application Schema Visualization" width = 400 >
 
-* 404 - NOT FOUND \
-  **{ "message": "Couldn't find State with 'id'=  " }**
-* 422 - UNPROCESSABLE ENTITY \
-  **{ "message": "Validation failed" }**
-* 500 - INTERNAL SERVER ERROR \
-  **{ "error": "Internal Server Error" }**
+* 200 - OK
+  * **{ "message": "This state has been updated successfully." }**
+  * **{ "message": "This state has been deleted successfully." }**
+  * **{ "message": "This park has been updated successfully." }**
+  * **{ "message": "This park has been deleted successfully." }**
+* 404 - NOT FOUND
+  * **{ "message": "Couldn't find State with 'id'=  " }**
+* 422 - UNPROCESSABLE ENTITY
+  * **{ "message": "Validation failed" }**
+* 500 - INTERNAL SERVER ERROR
+  * **{ "error": "Internal Server Error" }**
 
 ## Database Schema 
 The database for this application has the following tables and relationships:
