@@ -11,13 +11,15 @@ class StatesController < ApplicationController
   end
 
   def create
-    @state = State.create(state_params)
-    json_response(@state)
+    @state = State.create!(state_params)
+    json_response(@state, :created)
   end
 
   def update
     @state = State.find(params[:id])
-    @state.update(state_params)
+    if @state.update!(state_params)
+      render status: 200, json: { message: "This state has been updated successfully." }
+    end
   end
 
   def destroy
@@ -26,10 +28,6 @@ class StatesController < ApplicationController
   end
 
   private
-  def json_response(object, status = :ok)
-    render json: object, status: status
-  end
-
   def quote_params
     params.permit(:author, :content)
   end
