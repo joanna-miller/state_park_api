@@ -19,6 +19,15 @@ class ParksController < ApplicationController
     json_response(@park, :created)
   end
 
+  def update 
+    @park = Park.find(params[:id])
+    if @park.update!(park_params)
+      render status: 200, json: {
+        message: "This park has been updated successfully."
+      }
+    end
+  end
+
   def park_params
     params.permit(:name, :info, :park_type, :state_id)
   end
