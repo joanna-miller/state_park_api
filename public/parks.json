@@ -1,0 +1,250 @@
+{
+  "apiVersion": "1.0",
+  "swaggerVersion": "1.2",
+  "basePath": "http://localhost:3000",
+  "resourcePath": "parks",
+  "apis": [
+    {
+      "path": "/states/{state_id}/parks",
+      "operations": [
+        {
+          "summary": "Fetches all parks for specific state",
+          "notes": "This endpoint lists all the State and National parks for a specific state",
+          "parameters": [
+            {
+              "paramType": "path",
+              "name": "state_id",
+              "type": "integer",
+              "description": "State Id",
+              "required": true
+            }
+          ],
+          "responseMessages": [
+            {
+              "code": 200,
+              "responseModel": null,
+              "message": "Success"
+            },
+            {
+              "code": 401,
+              "responseModel": null,
+              "message": "Unauthorized"
+            },
+            {
+              "code": 406,
+              "responseModel": null,
+              "message": "The request you made is not acceptable"
+            }
+          ],
+          "nickname": "Parks#index",
+          "method": "get"
+        }
+      ]
+    },
+    {
+      "path": "/states/{state_id}/parks",
+      "operations": [
+        {
+          "summary": "Creates a new park",
+          "notes": "This endpoint creates a new park within a state",
+          "parameters": [
+            {
+              "paramType": "path",
+              "name": "state_id",
+              "type": "integer",
+              "description": "State Id",
+              "required": true
+            },
+            {
+              "paramType": "form",
+              "name": "name",
+              "type": "string",
+              "description": "Name of Park",
+              "required": true
+            },
+            {
+              "paramType": "form",
+              "name": "info",
+              "type": "text",
+              "description": "Park Info",
+              "required": true
+            },
+            {
+              "paramType": "form",
+              "name": "park_type",
+              "type": "string",
+              "description": "Type of Park",
+              "required": true
+            }
+          ],
+          "responseMessages": [
+            {
+              "code": 200,
+              "responseModel": null,
+              "message": "Success"
+            },
+            {
+              "code": 404,
+              "responseModel": null,
+              "message": "Not Found"
+            },
+            {
+              "code": 422,
+              "responseModel": null,
+              "message": "Unprocessable Entity"
+            }
+          ],
+          "nickname": "Parks#create",
+          "method": "post"
+        }
+      ]
+    },
+    {
+      "path": "/states/{state_id}/parks/{id}",
+      "operations": [
+        {
+          "summary": "Fetches a single park for a state",
+          "notes": "This endpoint returns a single park",
+          "parameters": [
+            {
+              "paramType": "path",
+              "name": "state_id",
+              "type": "integer",
+              "description": "State Id",
+              "required": true
+            },
+            {
+              "paramType": "path",
+              "name": "id",
+              "type": "integer",
+              "description": "Review Id",
+              "required": true
+            }
+          ],
+          "responseMessages": [
+            {
+              "code": 200,
+              "responseModel": null,
+              "message": "Success"
+            },
+            {
+              "code": 404,
+              "responseModel": null,
+              "message": "Not Found"
+            },
+            {
+              "code": 422,
+              "responseModel": null,
+              "message": "A review with that id does not match the destination id."
+            }
+          ],
+          "nickname": "Parks#show",
+          "method": "get"
+        }
+      ]
+    },
+    {
+      "path": "/states/{state_id}/parks/{id}",
+      "operations": [
+        {
+          "summary": "Updates an existing park",
+          "notes": "This endpoint updates an existing park with new details",
+          "parameters": [
+            {
+              "paramType": "path",
+              "name": "state_id",
+              "type": "integer",
+              "description": "State Id",
+              "required": true
+            },
+            {
+              "paramType": "form",
+              "name": "name",
+              "type": "string",
+              "description": "Name of Park",
+              "required": false
+            },
+            {
+              "paramType": "form",
+              "name": "info",
+              "type": "text",
+              "description": "Park Info",
+              "required": false
+            },
+            {
+              "paramType": "form",
+              "name": "park_type",
+              "type": "string",
+              "description": "Type of Park",
+              "required": false
+            }
+          ],
+          "responseMessages": [
+            {
+              "code": 200,
+              "responseModel": null,
+              "message": "This park has been updated successfully."
+            },
+            {
+              "code": 404,
+              "responseModel": null,
+              "message": "Not Found"
+            },
+            {
+              "code": 422,
+              "responseModel": null,
+              "message": "Unprocessable Entity"
+            }
+          ],
+          "nickname": "Parks#update",
+          "method": "patch"
+        }
+      ]
+    },
+    {
+      "path": "/states/{state_id}/parks/{id}",
+      "operations": [
+        {
+          "summary": "Deletes an existing park",
+          "notes": "This endpoint deletes an existing park",
+          "parameters": [
+            {
+              "paramType": "path",
+              "name": "state_id",
+              "type": "integer",
+              "description": "State Id",
+              "required": true
+            },
+            {
+              "paramType": "path",
+              "name": "id",
+              "type": "integer",
+              "description": "Park Id",
+              "required": true
+            }
+          ],
+          "responseMessages": [
+            {
+              "code": 200,
+              "responseModel": null,
+              "message": "This park has been deleted successfully."
+            },
+            {
+              "code": 404,
+              "responseModel": null,
+              "message": "Not Found"
+            },
+            {
+              "code": 422,
+              "responseModel": null,
+              "message": "Unprocessable Entity"
+            }
+          ],
+          "nickname": "Parks#destroy",
+          "method": "delete"
+        }
+      ]
+    }
+  ],
+  "authorizations": null
+}
