@@ -28,6 +28,15 @@ class ParksController < ApplicationController
     end
   end
 
+  def destroy
+    @park = Park.find(params[:id])
+    if @park.destroy!
+      render status: 200, json: {
+        message: "This park has been deleted successfully."
+      }
+    end
+  end
+
   def park_params
     params.permit(:name, :info, :park_type, :state_id)
   end
