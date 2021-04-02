@@ -11,9 +11,9 @@ class Seed
     state_list.each do |state|
       state = State.create!(name: state)
       3.times do |i|
-        Park.create!(name: Faker::Mountain.name, park_type: "State Park", state_id: state.id)
+        Park.create!(name: Faker::Mountain.name, park_type: "State Park", info: Faker::Lorem.paragraph(sentence_count: 3), state_id: state.id)
       end
-      Park.create!(name: Faker::Mountain.name, park_type: "National Park", state_id: state.id)
+      Park.create!(name: Faker::Mountain.name, park_type: "National Park", info: Faker::Lorem.paragraph(sentence_count: 3), state_id: state.id)
     end
   end
 end

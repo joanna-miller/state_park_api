@@ -14,7 +14,7 @@ class ParksController < ApplicationController
     @parks = state.parks
     json_response(@parks)
   end
-
+  
   swagger_api :show do
     summary "Fetches a single park for a state"
     notes "This endpoint returns a single park"
@@ -32,6 +32,20 @@ class ParksController < ApplicationController
     else
       render status: 404, json: { message: "A park with that id does not match the state id." }
     end
+  end
+
+  swagger_api :random do
+    summary "Fetches a random park"
+    notes "This endpoint fetches a single random park from the database."
+    response :ok, "Success"
+    response :not_found
+    response :unprocessable_entity
+  end
+  def random
+    state_ids = State.pluck(:id)
+    random_state = State.find(state_ids.sample)
+    @random_park = random_state.parks.sample
+    json_response(@random_park)
   end
 
   swagger_api :create do

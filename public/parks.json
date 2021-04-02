@@ -117,7 +117,7 @@
               "paramType": "path",
               "name": "id",
               "type": "integer",
-              "description": "Review Id",
+              "description": "Park Id",
               "required": true
             }
           ],
@@ -135,7 +135,7 @@
             {
               "code": 422,
               "responseModel": null,
-              "message": "A review with that id does not match the destination id."
+              "message": "A park with that id does not match the state id."
             }
           ],
           "nickname": "Parks#show",
@@ -242,6 +242,34 @@
           ],
           "nickname": "Parks#destroy",
           "method": "delete"
+        }
+      ]
+    },
+    {
+      "path": "/random",
+      "operations": [
+        {
+          "summary": "Fetches a random park",
+          "notes": "This endpoint fetches a single random park from the database.",
+          "responseMessages": [
+            {
+              "code": 200,
+              "responseModel": null,
+              "message": "Success"
+            },
+            {
+              "code": 404,
+              "responseModel": null,
+              "message": "Not Found"
+            },
+            {
+              "code": 422,
+              "responseModel": null,
+              "message": "Unprocessable Entity"
+            }
+          ],
+          "nickname": "Parks#random",
+          "method": "get"
         }
       ]
     }

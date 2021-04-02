@@ -9,7 +9,7 @@
       "operations": [
         {
           "summary": "Fetches all states",
-          "notes": "This endpoint lists all the states that the API currently has listed",
+          "notes": "This endpoint lists all the states that the API currently contains",
           "responseMessages": [
             {
               "code": 200,
@@ -43,7 +43,7 @@
               "paramType": "form",
               "name": "name",
               "type": "string",
-              "description": "Name",
+              "description": "Name of State",
               "required": true
             }
           ],
@@ -124,7 +124,7 @@
               "paramType": "form",
               "name": "name",
               "type": "string",
-              "description": "Name",
+              "description": "Updated Name",
               "required": true
             }
           ],
