@@ -7,8 +7,13 @@
 
 [Epicodus](https://www.epicodus.com/) - [Ruby and Rails](https://www.learnhowtoprogram.com/ruby-and-rails/) - [Week 6](https://www.learnhowtoprogram.com/ruby-and-rails/building-an-api/building-an-api-independent-project)
 
-
 #### Date created: 04/02/2021
+* * *
+
+## Description
+
+A State and National Park API. A user cal make API calls to get a list of State and National Parks by state, or update, post, and delete states or parks. 
+
 ---
 
 ## Technologies Used
@@ -30,9 +35,43 @@
 
 ---
 
-## Description
+## Authentication
 
-A State and National Park API. A user cal make API calls to get a list of State and National Parks by state, or update, post, and delete states or parks. 
+This service requires no authentication to use.
+
+## Demo API
+
+To Demo this API, follow the installation instructions listed below and navigate to http://localhost:3000/index.html in your browser. \
+There you can live demo the following API calls:
+
+Action | Route | Description
+| :--- | --- | ---: |
+| GET | /random | _Fetches a random park_ | 
+| GET | /states | _Fetches all states_ |
+| POST | /states | _Creates a state_ |
+| DELETE | /states/{id} | _Deletes an existing state and the parks within it_ | 
+| GET | /states/{id} | _Fetches a single state_ | 
+| PATCH | /states/{id} | _Updates an existing state_ | 
+| GET | /states/{id}/parks | _Fetches all parks for a specific state_ |
+| POST | /states/{id}/parks | _Creates a new park_ |
+| DELETE | /states/{id}/parks/{id} | _Deletes an existing park_ | 
+| GET | /states/{id}/parks/{id} | _Fetches a single park a state_ | 
+| PATCH | /states/{id}/parks/{id} | _Updates an existing park_ | 
+
+## Responses & Errors
+
+* `GET /states` - sample response
+    * <img src="./public/images/get_states.png" alt="Application Schema Visualization" width = 400 >
+
+* `GET /states/113/parks` - sample response
+    * <img src="./public/images/get_parks.png" alt="Application Schema Visualization" width = 400 >
+
+* 404 - NOT FOUND \
+  **{ "message": "Couldn't find State with 'id'=  " }**
+* 422 - UNPROCESSABLE ENTITY \
+  **{ "message": "Validation failed" }**
+* 500 - INTERNAL SERVER ERROR \
+  **{ "error": "Internal Server Error" }**
 
 ## Database Schema 
 The database for this application has the following tables and relationships:
