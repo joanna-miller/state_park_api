@@ -53,7 +53,7 @@ class ParksController < ApplicationController
     notes "This endpoint creates a new park within a state"
     param :path, :state_id, :integer, :required, "State Id"
     param :form, :name, :string, :required, "Name of Park"
-    param :form, :info, :text, :required, "Park Info"
+    param :form, :info, :string, :required, "Park Info"
     param :form, :park_type, :string, :required, "Type of Park"
     response :ok, "Success"
     response :not_found
@@ -68,8 +68,9 @@ class ParksController < ApplicationController
     summary "Updates an existing park"
     notes "This endpoint updates an existing park with new details"
     param :path, :state_id, :integer, :required, "State Id"
+    param :path, :id, :integer, :required, "Park Id"
     param :form, :name, :string, :optional, "Name of Park"
-    param :form, :info, :text, :optional, "Park Info"
+    param :form, :info, :string, :optional, "Park Info"
     param :form, :park_type, :string, :optional, "Type of Park"
     response :ok, "This park has been updated successfully."
     response :not_found

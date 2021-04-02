@@ -65,7 +65,7 @@
             {
               "paramType": "form",
               "name": "info",
-              "type": "text",
+              "type": "string",
               "description": "Park Info",
               "required": true
             },
@@ -158,6 +158,13 @@
               "required": true
             },
             {
+              "paramType": "path",
+              "name": "id",
+              "type": "integer",
+              "description": "Park Id",
+              "required": true
+            },
+            {
               "paramType": "form",
               "name": "name",
               "type": "string",
@@ -167,7 +174,7 @@
             {
               "paramType": "form",
               "name": "info",
-              "type": "text",
+              "type": "string",
               "description": "Park Info",
               "required": false
             },
