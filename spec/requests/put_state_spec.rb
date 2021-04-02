@@ -11,4 +11,7 @@ describe "update a state route", :type => :request do
     expect(State.find(@state.id).name).to eq('Updated State')
   end
 
+  it 'returns an updated status' do
+    expect(JSON.parse(response.body)['message']).to eq("This state has been updated successfully.")
+  end
 end
