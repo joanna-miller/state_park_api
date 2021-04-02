@@ -1,11 +1,11 @@
 require 'rails_helper'
 
 describe "get all states route", :type => :request do
-  let!(:states) { FactoryBot.create_list(:state, 20)}
+  let!(:states) { FactoryBot.create_list(:state, 10)}
   before { get '/states'}
 
   it 'returns all states' do
-    expect(JSON.parse(response.body).size).to eq(20)
+    expect(JSON.parse(response.body).size).to eq(10)
   end
 
   it 'returns status code 200' do
